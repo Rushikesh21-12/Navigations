@@ -1,24 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Button } from "react-native";
 
+export default function HomeScreen({navigation, route}){
 
+    const [homeFirstName, setHomeFirstName] = useState('Rushi')
+    const [homeLastName, setHomeLastName] = useState('Solanki')
 
-export default function HomeScreen({navigation}){
+    const [userName, setUserName] = useState('Not Registered')
 
-    React.useLayoutEffect(() => {
+    useEffect(() => {
+        setUserName(route.params?.userName)
         navigation.setOptions({
-          headerRight: () => (
-            <Button title = 'HB' onPress={() => alert('Button Pressed!!')} />
-          ),
+            headerRight: () => (
+              <Text>{userName}</Text>
+            ),
         });
-      }, [navigation]);
+    })
 
     return(
         <View style = {styles.container}>
-            <Text style = {styles.textStyle}>Home Screen</Text>
-            <TouchableOpacity onPress = {() => navigation.navigate('Profile')}>
-                <Text style = {{color: 'blue'}}>Click here to open Profile Screen</Text>
+
+            <TouchableOpacity onPress = {() => {navigation.navigate('UserData', {userName : userName})}}>
+
+                <Text style = {{color: 'blue'}}>Registration</Text>
+
             </TouchableOpacity>
+
+            <Text style = {styles.textStyle}>Home Screen</Text>
+
+            <Text>ProfileName : {route.params?.profileName}</Text>
+
+            <TouchableOpacity onPress = {() => {
+                navigation.navigate('Profile', { 
+                    homeFirstName : homeFirstName, 
+                    homeLastName : homeLastName
+                })
+            }}>
+
+                <Text style = {{color: 'blue'}}>Click here to open Profile Screen</Text>
+
+            </TouchableOpacity>
+
         </View>
     )
 }
