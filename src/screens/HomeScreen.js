@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Button } from "react-native";
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default function HomeScreen({navigation, route}){
 
@@ -19,16 +20,11 @@ export default function HomeScreen({navigation, route}){
 
     return(
         <View style = {styles.container}>
+            <Icon name="home" size={24} color="black" />
 
             <TouchableOpacity onPress = {() => {navigation.navigate('UserData', {userName : userName})}}>
-
-                <Text style = {{color: 'blue'}}>Registration</Text>
-
+                <Text style = {styles.textStyle}>Registration</Text>
             </TouchableOpacity>
-
-            <Text style = {styles.textStyle}>Home Screen</Text>
-
-            <Text>ProfileName : {route.params?.profileName}</Text>
 
             <TouchableOpacity onPress = {() => {
                 navigation.navigate('Profile', { 
@@ -36,11 +32,9 @@ export default function HomeScreen({navigation, route}){
                     homeLastName : homeLastName
                 })
             }}>
-
-                <Text style = {{color: 'blue'}}>Click here to open Profile Screen</Text>
-
+                <Text style = {styles.textStyle}>Go to Profile Screen</Text>
             </TouchableOpacity>
-
+            
         </View>
     )
 }
@@ -53,6 +47,7 @@ const styles = StyleSheet.create({
     },
 
     textStyle: {
-        fontSize: 40
+        fontSize: 30,
+        color: 'blue'
     }
 })

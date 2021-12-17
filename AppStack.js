@@ -22,7 +22,7 @@ function LogoTitle() {
   );
 }
 
-export default function APP(){
+export default function AppStack(){
 
   const Stack = createNativeStackNavigator();
   
