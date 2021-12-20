@@ -20,7 +20,7 @@ export default function UserData({navigation, route}){
             <Button
                 title = 'Register'
                 onPress = {() => navigation.navigate({
-                    name: 'Home',
+                    name: 'HomeScreen',
                     params: {userName: userName},
                     merge: true
                 })}

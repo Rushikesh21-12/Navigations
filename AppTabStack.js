@@ -15,8 +15,8 @@ export default function AppTabStack() {
     function HomeStackScreen() {
         return (
           <HomeStack.Navigator>
-            <HomeStack.Screen name = "BottomTab1" component = {BottomTab1} options={{headerShown: false}} />
-            <HomeStack.Screen name = "BottomTab2" component = {BottomTab2} options={{headerShown: false}}/>
+            <HomeStack.Screen name = "BottomTab1" component = {BottomTab1} options = {{headerShown: false}} />
+            <HomeStack.Screen name = "BottomTab2" component = {BottomTab2} options = {{headerShown: false}}/>
           </HomeStack.Navigator>
         );
     }
@@ -25,8 +25,8 @@ export default function AppTabStack() {
     function SettingsStackScreen() {
         return (
           <SettingsStack.Navigator>
-            <SettingsStack.Screen name = "BottomTab3" component = {BottomTab3} options={{headerShown: false}}/>
-            <SettingsStack.Screen name = "BottomTab2" component = {BottomTab2} options={{headerShown: false}}/>
+            <SettingsStack.Screen name = "BottomTab3" component = {BottomTab3} options = {{headerShown: false}}/>
+            <SettingsStack.Screen name = "BottomTab2" component = {BottomTab2} options = {{headerShown: false}}/>
           </SettingsStack.Navigator>
         );
     }
@@ -34,23 +34,20 @@ export default function AppTabStack() {
     const Tab = createBottomTabNavigator()
 
     return (
-        <NavigationContainer
-            
-        >
+        <NavigationContainer>
             <Tab.Navigator
-                screenOptions={({ route }) => ({
+                screenOptions = {({ route }) => ({
                     tabBarIcon: ({ focused, color, size }) => {
                         let iconName;
     
-                        if (route.name === 'Home') {
+                        if (route.name === 'Home') 
                             iconName = focused ? 'home': 'home-outline'
-                        } else if (route.name === 'Setting') {
+                        else if (route.name === 'Setting') 
                             iconName = focused ? 'settings' : 'settings-outline'
-                        }
-    
-                        // You can return any component that you like here!
+                        
                         return <Ionicons name = {iconName} size = {size} color = {color} />
                     },
+                    
                     tabBarActiveTintColor: 'black',
                     tabBarInactiveTintColor: 'black',
                     headerShown: false

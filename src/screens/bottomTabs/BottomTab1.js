@@ -9,6 +9,7 @@ export default function BottomTab1({navigation}) {
             <Ionicons name = 'home' size = {50} color = 'black' />
 
             <Button title = 'Go to List' onPress = {() => navigation.navigate('BottomTab2')}/>
+            <Button title = 'Go to profile stack' onPress = {() => navigation.navigate('Profile')}/>
         </View>
     )
 }

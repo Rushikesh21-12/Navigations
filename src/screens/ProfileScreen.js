@@ -17,7 +17,7 @@ export default function ProfileScreen({navigation, route}){
 
             <TouchableOpacity onPress = {() => {
                 navigation.navigate({
-                    name : 'Home', 
+                    name : 'HomeScreen', 
                     params : {profileName : profileName},
                     merge : true
                 })
@@ -54,7 +54,7 @@ export default function ProfileScreen({navigation, route}){
                 <Text style = {{color: 'blue'}}>Pop to top</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress = {() => {
+            {/* <TouchableOpacity onPress = {() => {
                 navigation.navigate('Setting', { 
                     homeFirstName: 'One'
                 })
@@ -71,7 +71,7 @@ export default function ProfileScreen({navigation, route}){
                 })
             }}>
                 <Text style = {{color: 'blue'}}>Go to Home and send prop to settings</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
         </View>
     )
 }
