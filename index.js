@@ -15,3 +15,12 @@ import AllTabs from './AllTabs'
 
 AppRegistry.registerComponent(appName, () => AllTabs);
 //Changes made by another dev
+//Changes made by another dev
+//Changes made by another dev
+//Changes made by another dev
+//Changes made by another dev
+//Changes made by another dev
+//Changes made by another dev
+//Changes made by another dev
+//Changes made by another dev
+//Changes made by another dev
