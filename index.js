@@ -14,3 +14,4 @@ import AppDrawer from './APPDrawer';
 import AllTabs from './AllTabs'
 
 AppRegistry.registerComponent(appName, () => AllTabs);
+//Changes to check
